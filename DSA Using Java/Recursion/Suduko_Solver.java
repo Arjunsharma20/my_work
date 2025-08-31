@@ -1,0 +1,38 @@
+public class Suduko_Solver {
+    public static void main(String[] args) {
+        
+    }
+    public boolean isValidSudoku(char[][] board){
+       
+        for (int i = 0; i < 9; i++) {
+            for(int j =0;j<9;j++){
+                if(board[i][j]=='.'){
+                    continue;
+                }
+                char num = board[i][j];
+                board[i][j] = '.';
+                if(isVaild(board,i,j,num)==false) return false;
+                board[i][j] = num;
+            }
+        }
+        return true;
+    }
+
+    private boolean isVaild(char[][] board, int rows, int col, char num) {
+        for(int j =0;j<9;j++){
+            if(board[rows][j]==num) return false;
+        }
+        for(int i =0;i<9;i++){
+            if(board[i][col]==num) return false;
+        }
+        // check 3X3 grid
+        int srow = (rows/3)*3;
+        int scol = (col/3)*3;
+        for(int i = srow;i<srow*3;i++){
+            for(int j=scol;j<scol*3;j++){
+                if(board[i][j] == num) return false;
+            }
+        }
+        return true;
+    }
+}

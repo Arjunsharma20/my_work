@@ -1,0 +1,10 @@
+from tkinter import *
+window = Tk()
+window.title("Lists")
+lb = Listbox(window)
+lb.insert(3,"Pizza")
+lb.insert(2,"Burger")
+lb.insert(1,"Chawmin")
+lb.insert(4,"Momos")
+lb.pack()
+window.mainloop()

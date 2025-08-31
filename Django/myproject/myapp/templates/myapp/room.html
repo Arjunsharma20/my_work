@@ -1,0 +1,9 @@
+{% extends 'myapp/index.html' %}
+
+{% block content %}
+  <h1>{{ room.name }}</h1>
+  <p>Topic: {{ room.topic }}</p>
+  <p> Name: {{room.name}}</p>
+  <p>Description: {{ room.description }}</p>
+  <p>Created: {{ room.created }}</p>
+{% endblock %}
